@@ -9,7 +9,8 @@ if [ "$HYPRGAMEMODE" = 1 ] ; then
         keyword general:gaps_out 0;\
         keyword general:border_size 1;\
         keyword decoration:rounding 0"
-    notify-send "animations off"
+    notify-send -t 800 "animations off"
     exit
 fi
 hyprctl reload 
+notify-send -t 800 "animations on"
