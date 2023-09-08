@@ -1,0 +1,14 @@
+@define-color background #0e1419;
+@define-color foreground rgb(27, 27, 27);
+@define-color foreground_border #b4befe;
+@define-color tooltip #000000;
+@define-color text #cba6f7;
+
+@define-color tooltip_background #243340;
+@define-color tooltip_text #f07078;
+
+@define-color btn #68d4ff;
+@define-color btn_focused #f07078;
+@define-color btn_active #f07078;
+@define-color btn_active_background rgb(27, 27, 27);
+@define-color btn_urgent #ff3333;

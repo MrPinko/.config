@@ -12,12 +12,12 @@
     "margin-right": 8,
 
 	"modules-left": [
-		"hyprland/workspaces"
+		"hyprland/workspaces",
+        "wlr/taskbar"
 	],
     
-    "modules-center": [
-        "wlr/taskbar",
-    ],
+    // "modules-center": [
+    // ],
     
     "modules-right": [
         "tray",

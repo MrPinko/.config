@@ -1,12 +1,29 @@
 (defwindow example
-           :monitor 0
-           :geometry (geometry :x "0%"
-                               :y "20px"
-                               :width "40%"
-                               :height "30px"
-                               :anchor "bottom center")
-           :stacking "fg"
-           :reserve (struts :distance "40px" :side "top")
-           :windowtype "dock"
-           :wm-ignore false
-  "example content")
+  :monitor 0
+  :geometry (geometry :x "0%"
+                      :y "20px"
+                      :width "90%"
+                      :height "30px"
+                      :anchor "top center")
+  :stacking "fg"
+  ; :reserve (struts :distance "40px" :side "top")
+  ; :windowtype "dock"
+  ; :exclusive true
+
+    ; (greeter :text "Say hello!" :name "Tim")
+    
+    (two-boxes))
+  
+
+
+(defwidget greeter [?text name]
+  (box :orientation "horizontal"
+       :halign "center"
+    text
+    (button :onclick "notify-send 'Hello' 'Hello, ${name}'"
+      "Greet")))
+
+(defwidget two-boxes []
+  (box
+    (box :class "first" (children :nth 0))
+    (box :class "second" (children :nth 1))))
