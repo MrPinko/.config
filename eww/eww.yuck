@@ -1,29 +1,20 @@
+(defpoll CURRENT :interval "1s" `scripts/music_info --time`)
+
 (defwindow example
+  :class "bg"
   :monitor 0
   :geometry (geometry :x "0%"
                       :y "20px"
-                      :width "90%"
+                      :width "30%"
                       :height "30px"
                       :anchor "top center")
   :stacking "fg"
-  ; :reserve (struts :distance "40px" :side "top")
-  ; :windowtype "dock"
-  ; :exclusive true
-
-    ; (greeter :text "Say hello!" :name "Tim")
-    
-    (two-boxes))
+  (music)
+)
   
-
-
-(defwidget greeter [?text name]
-  (box :orientation "horizontal"
-       :halign "center"
-    text
-    (button :onclick "notify-send 'Hello' 'Hello, ${name}'"
-      "Greet")))
-
-(defwidget two-boxes []
-  (box
-    (box :class "first" (children :nth 0))
-    (box :class "second" (children :nth 1))))
+(defwidget music []
+  (box :class "music_bar" :halign "center"
+    (scale :onscroll "mpc -q seek +1" :min 0 :active "true" :max 100 :value CURRENT)
+    CURRENT
+  )
+)
